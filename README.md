@@ -33,7 +33,7 @@
 
 ![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/流程.png)
 
-截图：
+截图：(只截了两张）
 
 ![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot1.png)
 
