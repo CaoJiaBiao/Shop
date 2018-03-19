@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.3//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="domain.CartVo" table="cart">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+		</id>
+		<property name="userId" type="java.lang.Integer">
+			<column name="userId" />
+		</property>
+		<property name="productId" type="java.lang.Integer">
+			<column name="productId" />
+		</property>
+		<property name="count" type="java.lang.Integer">
+			<column name="count" />
+		</property>
+	</class>
+</hibernate-mapping>

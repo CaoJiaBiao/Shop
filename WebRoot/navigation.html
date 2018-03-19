@@ -1,0 +1,51 @@
+<html>
+	<style type="text/css">
+body {
+	background: url(image/navigation.jpeg) 100% 0 repeat-x;
+	color: #00458c;
+}
+
+ul {
+	font-size: 0.9em;
+	color: #00458c;
+	list-style-type: none; /* 不显示项目符号 */
+}
+
+li {
+	background: url(image/item.png) no-repeat; /* 添加为背景图片 */
+	padding-left: 25px; /* 设置图标与文字的间隔 */
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	color: #c00;
+	backaground: #069;
+}
+
+a:visited {
+	color: sliver;
+}
+</style>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<body>
+		<strong>产品分类</strong>
+		<ul>
+			<li>
+				<a href="selectProductBySort.action?sortId=1" target="destination">精品图书</a>
+			</li>
+			<li>
+				<a href="selectProductBySort.action?sortId=2" target="destination">数码产品</a>
+			</li>
+			<li>
+				<a href="selectProductBySort.action?sortId=3" target="destination">日常用品</a>
+			</li>
+			<li>
+				<a href="selectProductBySort.action?sortId=4" target="destination">食品杂货</a>
+			</li>
+		</ul>
+	</body>
+</html>

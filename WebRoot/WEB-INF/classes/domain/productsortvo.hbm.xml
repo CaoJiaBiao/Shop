@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.3//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="domain.ProductSortVo" table="productSort">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+		</id>
+		<property name="sortName" type="java.lang.String">
+			<column name="sortName" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

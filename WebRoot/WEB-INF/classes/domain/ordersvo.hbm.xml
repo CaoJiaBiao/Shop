@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.3//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="domain.OrdersVo" table="orders">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+		</id>
+		<property name="userId" type="java.lang.Integer">
+			<column name="userId" />
+		</property>
+		<property name="productId" type="java.lang.Integer">
+			<column name="productId" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="address" />
+		</property>
+		<property name="telNum" type="java.lang.String">
+			<column name="telNum" />
+		</property>
+		<property name="e_Mail" type="java.lang.String">
+			<column name="e_Mail" />
+		</property>
+	</class>
+</hibernate-mapping>

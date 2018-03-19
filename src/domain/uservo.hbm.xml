@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.3//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="domain.UserVo" table="user" >
+		<id name="userID" type="java.lang.Integer">
+			<column name="userID" />			
+		</id>
+		<property name="userName" type="java.lang.String">
+			<column name="userName" length="30" />			
+		</property>
+		<property name="passWord" type="java.lang.String">
+			<column name="passWord" length="30" />			
+		</property>
+		<property name="sex" type="java.lang.String">
+			<column name="sex" length="4"/>			
+		</property>
+		<property name="age" type="java.lang.Integer">
+			<column name="age"/>
+		</property>
+		<property name="telNum" type="java.lang.String">
+			<column name="telNum" length="15"/>
+		</property>
+		<property name="e_Mail" type="java.lang.String">
+			<column name="e_Mail" length="50" />
+		</property>	
+	</class>
+</hibernate-mapping>

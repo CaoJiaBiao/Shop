@@ -1,0 +1,65 @@
+<html>
+	<style type="text/css">
+body {
+	background-image: url(image/head.gif);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
+p {
+	font-size: 15px;
+	color: orange;
+	letter-spacing: 6px;
+	text-decoration: blink;
+	font-weight: bold;
+	font-family: Arial, Tahoma, Verdana;
+}
+
+p #welcome {
+	font-size: 25px;
+	color: yellow;
+	/*float:left;*/
+	font-style: italic;
+}
+
+div {
+	position: relative;
+	top: 18px;
+	left: 5px;
+	color: rgb(100, 14, 200);
+}
+
+a {
+	color: rgb(0, 0, 0);
+	font-size: 17px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	font-size: 17px;
+	text-decoration: underline;
+	color: blue;
+}
+</style>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<body>
+		<p>
+			<span id="welcome">You are welcome</span>
+		</p>
+
+		<div>
+			<span><a href="login.jsp" target="destination">登&nbsp;&nbsp;录</a>
+			</span> |
+			<span><a href="register.jsp" target="destination">注&nbsp;&nbsp;册</a>
+			</span> |
+			<span><a href="loginOut.action" target="destination">注&nbsp;&nbsp;销</a>
+			</span> |
+			<span><a href="showCart.jsp" target="destination">购物车</a>
+			</span> |
+			<span><a href="content.html" target="destination">联系我们</a>
+			</span>
+		</div>
+	</body>
+</html>

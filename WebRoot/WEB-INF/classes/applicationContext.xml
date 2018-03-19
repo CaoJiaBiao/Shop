@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/shopping"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="datasource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>domain/uservo.hbm.xml</value>
+				<value>domain/cartvo.hbm.xml</value>
+				<value>domain/productinfovo.hbm.xml</value>
+				<value>domain/productsortvo.hbm.xml</value>
+				<value>domain/ordersvo.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+		<bean id="userDAO" class="dao.UserDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userService" class="service.UserServiceImpl">
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
+	<bean id="productInfoDAO" class="dao.ProductInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="productInfoService" class="service.ProductInfoServiceImpl">
+		<property name="productInfoDAO">
+			<ref bean="productInfoDAO" />
+		</property>
+	</bean>
+		<bean id="productSortDAO" class="dao.ProductSortDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="productSortService" class="service.ProductSortServiceImpl">
+		<property name="productSortDAO">
+			<ref bean="productSortDAO" />
+		</property>
+	</bean>
+	<bean id="cartDAO" class="dao.CartDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="cartService" class="service.CartServiceImpl">
+		<property name="cartDAO">
+			<ref bean="cartDAO" />
+		</property>
+	</bean>
+	 <bean id="ordersDAO" class="dao.OrdersDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ordersService" class="service.OrdersServiceImpl">
+		<property name="ordersDAO">
+			<ref bean="ordersDAO" />
+		</property>
+	</bean>
+ 	<bean id="showCart" class="action.CartProductSelect">
+		<property name="cartService">
+			<ref bean="cartService" />
+		</property>
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="productInfoService">
+			<ref bean="productInfoService" />
+		</property>
+		<property name="productSortService">
+			<ref bean="productSortService" />
+		</property>
+	</bean>
+	<bean id="login" class="action.LoginAction">
+		<property name="userService">
+			<ref bean="userService" />
+		</property>	
+	</bean>
+	<bean id="register" class="action.RegisterAction">
+		<property name="userService">
+			<ref bean="userService" />
+		</property>	
+	</bean>
+	<bean id="selectProductBySort" class="action.SelectProductBySort">
+		<property name="productInfoService">
+			<ref bean="productInfoService" />
+		</property>
+		<property name="productSortService">
+			<ref bean="productSortService" />
+		</property>	
+	</bean>
+
+	<bean id="addCart" class="action.AddCart">
+		<property name="cartService">
+			<ref bean="cartService" />
+		</property>
+	</bean>
+	<bean id="updateCart" class="action.UpdateCart">
+		<property name="cartService">
+			<ref bean="cartService" />
+		</property>
+	</bean>
+	<bean id="account" class="action.Account">
+		<property name="cartService">
+			<ref bean="cartService" />
+		</property>
+		<property name="ordersService">
+			<ref bean="ordersService" />
+		</property>	
+	</bean>
+</beans>

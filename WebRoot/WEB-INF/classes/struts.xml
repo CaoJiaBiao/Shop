@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml"/>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.action.extension" value="action"></constant>
+	<constant name="struts.locale" value="en_GB"></constant>
+	<constant name="struts.custom.i18n.resources" value="Application"></constant>
+     <package name="main" extends="struts-default">
+		<action name="showCart" class="action.CartProductSelect">
+           <result name="error">/error.jsp</result>
+           <result name="pleaseLogin">/login.jsp</result>
+           <result name="success">/showCart.jsp</result>
+        </action>
+        <action name="login" class="action.LoginAction">
+           <result name="error">/register.jsp</result>
+           <result name="success">/success.jsp</result>
+        </action>
+        <action name="register" class="action.RegisterAction">
+           <result name="input">/register.jsp</result>
+           <result name="success">/registerSuccess.jsp</result>
+        </action>
+        <action name="selectProductBySort" class="action.SelectProductBySort">
+           <result name="error">/error.jsp</result>
+           <result name="success">/showProduct.jsp</result>
+        </action>
+        <action name="loginOut" class="action.LoginOut">
+           <result name="success">/login.jsp</result>
+        </action>
+		<action name="addCart" class="action.AddCart">
+			<result name="pleaseLoginIn">/login.jsp</result>
+			<result name="input">/login.jsp</result>
+           <result name="error">/error.jsp</result>
+           <result name="success">/showProduct.jsp</result>
+        </action>
+        <action name="updateCart" class="action.UpdateCart">
+           <result name="success">/showCart.jsp</result>
+        </action>
+	    <action name="account" class="action.Account">
+           <result name="success">/showProduct.jsp</result>
+        </action>
+     </package>
+</struts>
