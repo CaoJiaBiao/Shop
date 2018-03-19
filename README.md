@@ -28,3 +28,10 @@
 等容器组件以提升系统性能和保证数据的完整性。而在持久层中，则依赖于Hibernate
 
 的对象化映射和数据库交互，处理DAO组件请求的数据，并返回处理结果。
+
+截图即流程图如下
+![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot1.png)
+
+![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot2.png)
+
+![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/流程.png)
