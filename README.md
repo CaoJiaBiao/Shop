@@ -29,9 +29,12 @@
 
 的对象化映射和数据库交互，处理DAO组件请求的数据，并返回处理结果。
 
-截图即流程图如下
+流程图如下
+
+![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/流程.png)
+
+截图：
+
 ![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot1.png)
 
 ![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot2.png)
-
-![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/流程.png)
