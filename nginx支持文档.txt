@@ -1,0 +1,46 @@
+1. 下载Nginx，部署两个Tomcat
+2. tomcat1/conf/server.xml中：
+	 (1)<Connector port="8888" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+     (2)<Engine name="Catalina" defaultHost="localhost" jvmRoute="tomcat1">
+   tomcat2/conf/server.xml中：
+	 (1)<Connector port="9999" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+     (2)<Engine name="Catalina" defaultHost="localhost" jvmRoute="tomcat2">
+3. nginx-1.8.0\conf\nginx.conf这个文件改为:
+      upstream server_lb{
+        server 127.0.0.1:8888;
+        server 127.0.0.1:9999;
+    }
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html;
+            proxy_pass http://server_lb;
+            index  index.html index.htm;
+        }
+4. Tomcat中session的共享:
+      （1）修改Nginx中server.xml文件，最简单的集群配置只需要将节点中注释掉的下面这句取消注释即可：
+	Xml代码：
+    <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/> 
+    （2）就是第6步
+5.D:\tomcat1\conf\Catalina\localhost中加ROOT.xml
+	ROOT内容是：
+	<?xml version="1.0" encoding="UTF-8"?>
+	<Context docBase="D:\Users\Administrator\workspace\MyEclipse 10\ShoppingSystem\WebRoot"/>
+  Tomcat2也是一样
+6. 修改项目的web.xml文件：
+web.xml文件的修改很简单：只需要在节点中添加这个节点<distributable/>就可以了。
+
+
+操作：	  启动Nginx
+                启动两个Tomcat
+         Nginx中nginx -s -reload
