@@ -38,3 +38,5 @@
 ![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot1.png)
 
 ![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot2.png)
+Nginx的支持之后
+![Alt text](https://github.com/CaoJiabiao/Shop/raw/master/screenshots/shot3.png)
